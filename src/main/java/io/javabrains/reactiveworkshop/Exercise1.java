@@ -56,6 +56,7 @@ public class Exercise1 {
         System.out.println("=====================");
         StreamSources.userStream()
                 .filter(user -> StreamSources.intNumbersStream().anyMatch(integer -> integer == user.getId()))
+                .map(user -> user.getFirstName())
                 .forEach(System.out::println);
     }
 }
